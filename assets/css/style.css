@@ -1,0 +1,218 @@
+:root {
+    --color-black: #131415;
+    --color-white: #ddd;
+    --color-light: #fff;
+    --color-bg: #001e2b;
+    --color-ol-li-bg: #062b38;
+    --color-h1: #16a2e2;
+    --color-copy-d: #24acdd;
+    --color-copy-h: #1a6f8e;
+    --color-show-d: #f24c4c;
+    --color-show-h: #cf3737;
+    --color-link-bg: #16a2e2;
+    --color-link-bg-h: #0872a2;
+    --color-code-hd-bg: #118ab5;
+    --color-code-hd: #074054;
+    --color-code-hd-br: #02b1ef;
+}
+body{
+    margin: 0;
+    padding: 16px;
+    background-color: var(--color-bg);
+    font-family: 'Montserrat', sans-serif;
+    overflow-x: hidden;
+}
+.instruction{
+    display: block;
+    width: -webkit-fill-available;
+    padding: 16px;
+    border-radius: 5px;
+    background-color: var(--color-ol-li-bg);
+}
+.instruction .language{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.instruction .language .show{
+    font-weight: 500;
+    color: var(--color-white);
+    margin-left: 16px;
+}
+.instruction .language .show:hover{
+    cursor: pointer;
+}
+.instruction .language .show span{
+    margin-left: 8px;
+}
+.instruction .language-ch{
+    display: flex;
+    align-items: center;
+}
+.instruction .language-ch span{
+    margin-right: 8px;
+    color: var(--color-white);
+}
+.instruction .language a{
+    display: block;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: var(--color-white);
+    transition: 0.5s;
+}
+.instruction .language a{
+    margin-right: 8px;
+}
+.instruction .language a:last-child{
+    margin: 0;
+}
+.instruction .language a:hover,
+.instruction .language a.active{
+    font-weight: 700;
+}
+.instruction .content .tab{
+    color: var(--color-white);
+    display: none;
+}
+.instruction .content .tab a{
+    color: var(--color-white);
+}
+.instruction .content .tab.active{
+    display: block;
+}
+.instruction .content .tab ol{
+    list-style-type: none;
+    padding-left: 20px;
+}
+.instruction .content .tab ol li{
+    line-height: 22px;
+}
+.instruction .content .tab ol li strong{
+    font-weight: 600;
+}
+.instruction .content{
+    display: none;
+}
+.list-btn{
+    list-style-type: none;
+    padding: 0;
+    margin: 16px 0 0 0;
+    display: flex;
+    column-gap: 16px;
+    overflow-x: auto;
+}
+.list-btn li{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+}
+.list-btn li:hover{
+    cursor: pointer;
+}
+.list-btn li .btn-load input{
+    display: none;
+}
+.list-btn li .btn-conver,
+.list-btn li .btn-load{
+    display: block;
+    padding: 12px 16px;
+    border-radius: 5px;
+    background-color: var(--color-ol-li-bg);
+    color: var(--color-white);
+}
+.list-btn li a{
+    color: var(--color-white);
+}
+.code{
+    display: flex;
+    flex-direction: column;
+    background: var(--color-white);
+    color: var(--color-black);
+    overflow: hidden;
+    border-radius: 5px;
+    border: 1px solid var(--color-code-hd-br);
+}
+.code .code-head{
+    padding: 16px;
+    overflow: hidden;
+    background-color: var(--color-code-hd-bg);
+    color: var(--color-code-hd);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.code .code-head .copy{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.code .code-head .copy .icon-copy{
+    margin-right: 8px;
+}
+.material-symbols-outlined {
+    font-variation-settings:
+    'FILL' 0,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 24
+}
+.code .code-head .copy:hover{
+    cursor: pointer;
+}
+.code pre{
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    width: 100%;
+    height: -webkit-fill-available;
+}
+.code pre code{
+    display: block;
+    padding: 16px;
+    height: 100%;
+    overflow-x: auto;
+}
+.example{
+    display: none;
+    margin-top: 16px;
+    gap: 16px;
+    grid-template-columns: 1fr;
+}
+.example.active{
+    display: grid;
+}
+@media screen and (min-width: 768px) {
+    .example.active{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+#svgPreview{
+    min-width: 330px;
+    max-width: 500px;
+    min-height: 330px;
+    max-height: 500px;
+}
+#clipPath{
+    margin-top: 16px;
+    display: none;
+}
+#clipPath.active{
+    display: block;
+}
+#clipPath .bg{
+    width: 100%;
+    max-width: 550px;
+    height: auto;
+    aspect-ratio: 1 / 0.8;
+    background-image: url('https://picsum.photos/550/350');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    clip-path: url(#bgFigure);
+}
+#clipPath svg{
+    width: 0;
+    height: 0;
+    position: absolute; 
+}
